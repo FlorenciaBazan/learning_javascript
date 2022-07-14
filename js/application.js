@@ -5,7 +5,7 @@ function calculateTaxes() {
 
   // 21% IVA, 9% Impuesto PAIS, 35% Retroactivo a moneda extranjera
 
-  let taxes = 21 + 9 + 35;
+  let taxes = 21 + 9 + 45;
   let taxes_percentage = (100 + taxes) / 100;
 
   if (value >+ 0) {
