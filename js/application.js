@@ -17,7 +17,7 @@ function calculateTaxes() {
 }
 
 function calculateMultipleTaxes() {
-  const value = prompt('Enter the values separated with comma: ').split(",");
+  const values = prompt('Enter the values separated with comma: ').split(",");
 
   let result;
 
@@ -26,9 +26,9 @@ function calculateMultipleTaxes() {
   let taxes = 21 + 9 + 45;
   let taxes_percentage = (100 + taxes) / 100;
 
-  if (value.length > 0) {
-    value.forEach(element => {
-      result = parseFloat(element * taxes_percentage).toFixed(2);
+  if (values.length > 0) {
+    values.forEach(value => {
+      result = parseFloat(value * taxes_percentage).toFixed(2);
       const history = new valuesHistory(result);
       console.log(history);
       console.log(`The amount with taxes is $${history.price} ARS`);
