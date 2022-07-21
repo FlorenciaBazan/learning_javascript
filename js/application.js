@@ -31,10 +31,17 @@ function calculateMultipleTaxes() {
       result = parseFloat(value * taxes_percentage).toFixed(2);
       const history = new valuesHistory(result);
       console.log(history);
-      console.log(`The amount with taxes is $${history.price} ARS`);
+      
+      var div = document.getElementById("values"),
+      p = document.createElement("p");
+      p.innerHTML = `The amount with taxes is $${history.price} ARS`;
+      div.append(p);
     });
   } else {
-    console.log('Invalid value, try again');
+    var div = document.getElementById("values"),
+    p = document.createElement("p");
+    p.innerHTML = `Invalid value, try again`;
+    div.append(p);
   }
 }
 
