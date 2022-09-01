@@ -122,3 +122,16 @@ function calculateMultipleTaxes() {
 function valuesHistory(price) {
   this.price = price;
 }
+
+const DOLAR_BLUE_API = "https://criptoya.com/api/dolar";
+const dolarValue = document.getElementById("dolarValue")
+
+fetch(DOLAR_BLUE_API)
+.then(response => response.json())
+.then(({oficial, blue}) => {
+  dolarValue.innerHTML = ""
+  dolarValue.innerHTML = `
+    <p>Dolar Oficial: $${oficial}</p>
+    <p>Dolar blue: $${blue}</p>
+  `
+})
